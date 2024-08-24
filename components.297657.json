@@ -1,0 +1,1324 @@
+{
+  "components": [
+    {
+      "name": "about_page_section",
+      "display_name": null,
+      "created_at": "2024-07-26T14:47:44.031Z",
+      "updated_at": "2024-07-29T08:45:35.991Z",
+      "id": 6098604,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "translatable": true,
+          "required": true,
+          "key": "title"
+        },
+        "content": {
+          "type": "richtext",
+          "pos": 1,
+          "required": true,
+          "translatable": true,
+          "key": "content"
+        },
+        "image": {
+          "type": "asset",
+          "pos": 2,
+          "required": true,
+          "filetypes": [
+            "images"
+          ],
+          "key": "image"
+        },
+        "with_dark_background": {
+          "type": "boolean",
+          "pos": 3,
+          "key": "is_dark_background"
+        },
+        "with_image_on_left": {
+          "type": "boolean",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "about_page_section",
+      "component_group_uuid": "f27bd84b-015d-41c0-8fdb-1f1d3edd79e8",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "About Us page"
+    },
+    {
+      "name": "about_section",
+      "display_name": null,
+      "created_at": "2024-07-26T08:49:55.958Z",
+      "updated_at": "2024-07-26T19:30:23.495Z",
+      "id": 6097007,
+      "schema": {
+        "header": {
+          "type": "section",
+          "pos": 0,
+          "key": "header",
+          "keys": [
+            "subtitle",
+            "section_title",
+            "image",
+            "header_image"
+          ]
+        },
+        "section_title": {
+          "type": "text",
+          "pos": 1,
+          "required": false,
+          "translatable": true,
+          "key": "section_title"
+        },
+        "subtitle": {
+          "type": "text",
+          "pos": 2,
+          "key": "subtitle",
+          "translatable": true
+        },
+        "header_image": {
+          "type": "asset",
+          "pos": 3,
+          "key": "image"
+        },
+        "content": {
+          "type": "section",
+          "pos": 4,
+          "key": "content",
+          "keys": [
+            "content_title",
+            "content_image",
+            "cta_title",
+            "cta_link",
+            "content_body"
+          ]
+        },
+        "content_title": {
+          "type": "text",
+          "pos": 5,
+          "key": "content_title",
+          "required": true,
+          "translatable": true
+        },
+        "content_image": {
+          "type": "asset",
+          "pos": 6
+        },
+        "content_body": {
+          "type": "richtext",
+          "pos": 7,
+          "required": true,
+          "translatable": true,
+          "max_length": 400
+        },
+        "cta_title": {
+          "type": "text",
+          "pos": 8,
+          "translatable": true,
+          "required": true
+        },
+        "cta_link": {
+          "type": "multilink",
+          "pos": 9
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "about_section",
+      "component_group_uuid": "79144a14-caca-4595-8a91-23b323a07cca",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Home Page"
+    },
+    {
+      "name": "company_partner",
+      "display_name": null,
+      "created_at": "2024-07-25T19:05:29.014Z",
+      "updated_at": "2024-07-27T10:49:35.786Z",
+      "id": 6095548,
+      "schema": {
+        "name": {
+          "type": "text",
+          "pos": 0,
+          "translatable": true,
+          "required": true
+        },
+        "image": {
+          "type": "multilink",
+          "pos": 1,
+          "required": true,
+          "filetypes": [
+            "images"
+          ],
+          "allow_external_url": true,
+          "allow_custom_attributes": false,
+          "asset_link_type": false
+        },
+        "has_large_image": {
+          "type": "boolean",
+          "pos": 2,
+          "inline_label": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "company_partner",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "company_statement",
+      "display_name": null,
+      "created_at": "2024-07-26T15:02:40.213Z",
+      "updated_at": "2024-07-26T15:04:59.220Z",
+      "id": 6098687,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "translatable": true,
+          "required": true
+        },
+        "content": {
+          "type": "richtext",
+          "pos": 1,
+          "required": true,
+          "translatable": true,
+          "max_length": 200
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "company_statement",
+      "component_group_uuid": "f27bd84b-015d-41c0-8fdb-1f1d3edd79e8",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "About Us page"
+    },
+    {
+      "name": "company_statements",
+      "display_name": null,
+      "created_at": "2024-07-26T15:03:39.865Z",
+      "updated_at": "2024-07-29T08:30:08.708Z",
+      "id": 6098719,
+      "schema": {
+        "section_title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "items": {
+          "type": "bloks",
+          "pos": 1,
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "company_statement"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "company_statements",
+      "component_group_uuid": "f27bd84b-015d-41c0-8fdb-1f1d3edd79e8",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "About Us page"
+    },
+    {
+      "name": "Config",
+      "display_name": null,
+      "created_at": "2024-07-20T12:06:46.925Z",
+      "updated_at": "2024-07-26T13:31:38.570Z",
+      "id": 6073247,
+      "schema": {
+        "header_nav_menu": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "header_nav_link"
+          ]
+        },
+        "footer": {
+          "type": "section",
+          "pos": 1,
+          "keys": [
+            "contacts",
+            "company_about",
+            "social_links",
+            "show_social_links"
+          ]
+        },
+        "contacts": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "footer_contact_section"
+          ],
+          "required": false
+        },
+        "company_about": {
+          "type": "text",
+          "pos": 3,
+          "translatable": true
+        },
+        "show_social_links": {
+          "type": "boolean",
+          "pos": 4,
+          "inline_label": true
+        },
+        "social_links": {
+          "type": "options",
+          "pos": 5,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "link",
+          "allow_advanced_search": true,
+          "filter_content_type": [
+            "Social"
+          ],
+          "folder_slug": "social_media/"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Config",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "contact_form",
+      "display_name": null,
+      "created_at": "2024-07-26T14:49:09.593Z",
+      "updated_at": "2024-07-26T14:57:19.716Z",
+      "id": 6098606,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "subtitle": {
+          "type": "text",
+          "pos": 1,
+          "required": true,
+          "translatable": true
+        },
+        "image": {
+          "type": "asset",
+          "pos": 2,
+          "required": true,
+          "filetypes": [
+            "images"
+          ],
+          "allow_external_url": false
+        },
+        "is_enabled": {
+          "type": "boolean",
+          "pos": 3,
+          "display_name": "Enable contact form - تفعيل استمارة التاوصل"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "contact_form",
+      "component_group_uuid": "907fab14-aceb-4f67-8109-85a2bb297e77",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Contact Us page"
+    },
+    {
+      "name": "contracting_services_section",
+      "display_name": null,
+      "created_at": "2024-07-26T13:24:22.519Z",
+      "updated_at": "2024-07-27T13:17:07.376Z",
+      "id": 6098356,
+      "schema": {
+        "upper_title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "title": {
+          "type": "text",
+          "pos": 1,
+          "required": true,
+          "translatable": true
+        },
+        "services": {
+          "type": "options",
+          "pos": 2,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "link",
+          "allow_advanced_search": true,
+          "required": true,
+          "filter_content_type": [
+            "Service"
+          ],
+          "folder_slug": "services/contracting/"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "contracting_services_section",
+      "component_group_uuid": "79144a14-caca-4595-8a91-23b323a07cca",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Home Page"
+    },
+    {
+      "name": "footer_contact_section",
+      "display_name": null,
+      "created_at": "2024-07-25T07:48:39.929Z",
+      "updated_at": "2024-07-29T17:19:46.816Z",
+      "id": 6092133,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "office": {
+          "type": "multilink",
+          "pos": 3,
+          "required": true,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "Office"
+          ],
+          "link_scope": "offices/"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "footer_contact_section",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "header_nav_link",
+      "display_name": "Header Nav Link",
+      "created_at": "2024-07-20T12:08:23.503Z",
+      "updated_at": "2024-07-29T08:27:21.597Z",
+      "id": 6073248,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "key": "title",
+          "required": true,
+          "translatable": true
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 1,
+          "key": "link",
+          "required": true,
+          "translatable": false,
+          "restrict_content_types": false,
+          "component_whitelist": [],
+          "force_link_scope": false,
+          "link_scope": "services/"
+        },
+        "children": {
+          "type": "bloks",
+          "pos": 2,
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": [
+            "Config"
+          ],
+          "folder_slug": "config/",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "header_nav_link"
+          ],
+          "key": "childrens"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Header Nav Link",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "hero_project_slide",
+      "display_name": null,
+      "created_at": "2024-07-21T09:13:03.101Z",
+      "updated_at": "2024-07-25T10:55:11.016Z",
+      "id": 6074329,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "project": {
+          "type": "multilink",
+          "pos": 3,
+          "source": "internal_stories",
+          "entry_appearance": "card",
+          "allow_advanced_search": true,
+          "required": true,
+          "filter_content_type": [
+            "Project"
+          ],
+          "folder_slug": "projects/",
+          "use_uuid": true,
+          "restrict_content_types": true,
+          "force_link_scope": true,
+          "component_whitelist": [
+            "Project"
+          ],
+          "link_scope": "projects/"
+        },
+        "image": {
+          "type": "asset",
+          "pos": 4,
+          "required": true
+        },
+        "work_details": {
+          "type": "bloks",
+          "pos": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Link"
+          ],
+          "component_group_whitelist": [],
+          "use_uuid": true,
+          "translatable": false,
+          "filter_content_type": [
+            "Service"
+          ],
+          "folder_slug": "services/",
+          "required": false,
+          "restrict_content_types": true,
+          "force_link_scope": true,
+          "link_scope": "services/"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero_project_slide",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "hero_service_slide",
+      "display_name": null,
+      "created_at": "2024-07-21T14:17:43.621Z",
+      "updated_at": "2024-07-23T13:13:14.556Z",
+      "id": 6074883,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "translatable": true,
+          "required": true,
+          "key": "title"
+        },
+        "subtitle": {
+          "type": "text",
+          "pos": 1,
+          "translatable": true,
+          "key": "subitlte"
+        },
+        "service": {
+          "type": "multilink",
+          "pos": 2,
+          "required": false,
+          "force_link_scope": true,
+          "link_scope": "services/",
+          "tooltip": false,
+          "filter_content_type": [
+            "Service"
+          ],
+          "folder_slug": "services/",
+          "use_uuid": true,
+          "key": "service",
+          "display_name": "",
+          "allow_custom_attributes": false,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "Service"
+          ]
+        },
+        "home_section_ref": {
+          "type": "text",
+          "pos": 3,
+          "key": "home_section_ref"
+        },
+        "image": {
+          "type": "asset",
+          "pos": 4,
+          "required": true,
+          "filetypes": [
+            "images"
+          ],
+          "key": "image"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero_service_slide",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "hero_slider",
+      "display_name": null,
+      "created_at": "2024-07-21T09:12:10.034Z",
+      "updated_at": "2024-07-26T13:26:09.464Z",
+      "id": 6074328,
+      "schema": {
+        "slides": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "hero_project_slide",
+            "hero_service_slide"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero_slider",
+      "component_group_uuid": "79144a14-caca-4595-8a91-23b323a07cca",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Home Page"
+    },
+    {
+      "name": "Link",
+      "display_name": null,
+      "created_at": "2024-07-23T19:43:47.750Z",
+      "updated_at": "2024-07-23T19:49:59.628Z",
+      "id": 6085747,
+      "schema": {
+        "value": {
+          "type": "multilink",
+          "pos": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": "value",
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Link",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "News",
+      "display_name": null,
+      "created_at": "2024-07-26T13:28:53.447Z",
+      "updated_at": "2024-07-26T15:07:52.544Z",
+      "id": 6098362,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "content": {
+          "type": "richtext",
+          "pos": 1,
+          "required": true,
+          "translatable": true,
+          "max_length": 250
+        },
+        "image": {
+          "type": "asset",
+          "pos": 2,
+          "required": true,
+          "filetypes": [
+            "images"
+          ],
+          "asset_folder_id": 610609,
+          "allow_external_url": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "News",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "news_section",
+      "display_name": null,
+      "created_at": "2024-07-26T13:27:52.893Z",
+      "updated_at": "2024-07-26T13:30:13.186Z",
+      "id": 6098360,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "subtitle": {
+          "type": "text",
+          "pos": 1,
+          "translatable": true
+        },
+        "news_items": {
+          "type": "options",
+          "pos": 2,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "card",
+          "allow_advanced_search": true,
+          "required": true,
+          "filter_content_type": [
+            "News"
+          ],
+          "folder_slug": "news/"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "news_section",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "Office",
+      "display_name": null,
+      "created_at": "2024-07-25T07:46:52.909Z",
+      "updated_at": "2024-07-29T17:35:28.559Z",
+      "id": 6092132,
+      "schema": {
+        "name": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "address": {
+          "type": "text",
+          "pos": 1,
+          "required": true,
+          "translatable": true
+        },
+        "phone_number": {
+          "type": "text",
+          "pos": 2,
+          "required": true,
+          "translatable": true
+        },
+        "PO_box": {
+          "type": "text",
+          "pos": 3,
+          "required": false,
+          "translatable": true
+        },
+        "country": {
+          "type": "text",
+          "pos": 4,
+          "translatable": true,
+          "required": true
+        },
+        "map_link": {
+          "type": "text",
+          "pos": 5
+        },
+        "phone_icon": {
+          "type": "asset",
+          "pos": 6,
+          "required": true,
+          "filetypes": [
+            "images"
+          ],
+          "asset_folder_id": 607631
+        },
+        "address_icon": {
+          "type": "asset",
+          "pos": 7,
+          "required": true,
+          "filetypes": [
+            "images"
+          ],
+          "asset_folder_id": 607631
+        },
+        "po_box_icon": {
+          "type": "asset",
+          "pos": 8,
+          "filetypes": [
+            "images"
+          ],
+          "required": true,
+          "asset_folder_id": 607631
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Office",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "offices_section",
+      "display_name": null,
+      "created_at": "2024-07-26T14:58:42.933Z",
+      "updated_at": "2024-07-26T14:59:24.092Z",
+      "id": 6098679,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "offices": {
+          "type": "options",
+          "pos": 1,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "link",
+          "allow_advanced_search": true,
+          "required": true,
+          "filter_content_type": [
+            "Office"
+          ],
+          "folder_slug": "offices/"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "offices_section",
+      "component_group_uuid": "907fab14-aceb-4f67-8109-85a2bb297e77",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Contact Us page"
+    },
+    {
+      "name": "page",
+      "display_name": null,
+      "created_at": "2024-07-19T07:38:35.180Z",
+      "updated_at": "2024-07-30T03:41:24.638Z",
+      "id": 6069752,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "has_plain_background": {
+          "type": "boolean",
+          "pos": 1
+        },
+        "banner_image": {
+          "type": "asset",
+          "pos": 2,
+          "filetypes": [
+            "images"
+          ],
+          "asset_folder_id": 607674
+        },
+        "body": {
+          "type": "bloks",
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "page",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "partners_section",
+      "display_name": null,
+      "created_at": "2024-07-26T08:56:36.553Z",
+      "updated_at": "2024-07-26T08:57:38.974Z",
+      "id": 6097012,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "translatable": true,
+          "required": true
+        },
+        "partners": {
+          "type": "bloks",
+          "pos": 1,
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "source": "internal_stories",
+          "entry_appearance": "card",
+          "allow_advanced_search": true,
+          "component_whitelist": [
+            "company_partner"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "partners_section",
+      "component_group_uuid": "79144a14-caca-4595-8a91-23b323a07cca",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Home Page"
+    },
+    {
+      "name": "Project",
+      "display_name": null,
+      "created_at": "2024-07-22T04:27:05.205Z",
+      "updated_at": "2024-07-28T08:55:48.593Z",
+      "id": 6075876,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true,
+          "rtl": false
+        },
+        "location": {
+          "type": "text",
+          "pos": 1,
+          "required": true,
+          "translatable": true
+        },
+        "services": {
+          "type": "options",
+          "pos": 2,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "link",
+          "allow_advanced_search": true,
+          "required": true,
+          "filter_content_type": [
+            "Service"
+          ],
+          "folder_slug": "services/"
+        },
+        "work_detail": {
+          "type": "textarea",
+          "pos": 3,
+          "translatable": true
+        },
+        "images": {
+          "type": "multiasset",
+          "pos": 4,
+          "filetypes": [
+            "images"
+          ],
+          "asset_folder_id": 607898
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Project",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "Service",
+      "display_name": null,
+      "created_at": "2024-07-21T13:52:36.609Z",
+      "updated_at": "2024-07-28T08:49:28.953Z",
+      "id": 6074880,
+      "schema": {
+        "category": {
+          "type": "option",
+          "pos": 0,
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "855efaef-56f4-4198-9719-2482f71c70a4",
+              "name": "Contracting Service",
+              "value": "contracting"
+            },
+            {
+              "_uid": "7c95c8d9-2807-45c0-b715-3a490fd60ca1",
+              "value": "supply_and_trade",
+              "name": "Supply and Trade Service"
+            }
+          ],
+          "required": true,
+          "default_value": "contracting"
+        },
+        "name": {
+          "type": "text",
+          "pos": 1,
+          "translatable": true,
+          "required": true
+        },
+        "description": {
+          "type": "richtext",
+          "pos": 2,
+          "translatable": true
+        },
+        "banner_image": {
+          "type": "asset",
+          "pos": 3,
+          "required": false,
+          "filetypes": [
+            "images"
+          ],
+          "asset_folder_id": 607675
+        },
+        "icon": {
+          "type": "asset",
+          "pos": 4,
+          "required": false,
+          "filetypes": [
+            "images"
+          ],
+          "asset_folder_id": 607631
+        },
+        "sub_services": {
+          "type": "bloks",
+          "pos": 5,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Service"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": "name",
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Service",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": "icon"
+    },
+    {
+      "name": "Social",
+      "display_name": null,
+      "created_at": "2024-07-25T07:59:44.706Z",
+      "updated_at": "2024-07-25T08:01:07.553Z",
+      "id": 6092140,
+      "schema": {
+        "name": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "icon": {
+          "type": "asset",
+          "pos": 1,
+          "required": true,
+          "filetypes": [
+            "images"
+          ],
+          "asset_folder_id": 607631
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 2,
+          "allow_target_blank": true,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Social",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "supply_trade_services_section",
+      "display_name": null,
+      "created_at": "2024-07-26T08:58:06.093Z",
+      "updated_at": "2024-07-26T15:24:12.147Z",
+      "id": 6097028,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "upper_title": {
+          "type": "text",
+          "pos": 1,
+          "required": true,
+          "translatable": true
+        },
+        "subtitle": {
+          "type": "text",
+          "pos": 2,
+          "required": true,
+          "translatable": true
+        },
+        "services": {
+          "type": "options",
+          "pos": 3,
+          "is_reference_type": true,
+          "source": "internal_stories",
+          "entry_appearance": "link",
+          "allow_advanced_search": true,
+          "filter_content_type": [
+            "Service"
+          ],
+          "folder_slug": "services/supply-and-trade/",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "supply_trade_services_section",
+      "component_group_uuid": "79144a14-caca-4595-8a91-23b323a07cca",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Home Page"
+    },
+    {
+      "name": "teaser",
+      "display_name": null,
+      "created_at": "2024-07-19T07:38:35.205Z",
+      "updated_at": "2024-07-19T07:38:35.205Z",
+      "id": 6069753,
+      "schema": {
+        "headline": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "teaser",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    }
+  ]
+}

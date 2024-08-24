@@ -1,0 +1,46 @@
+---
+import {ENGLISH_LANG, ARABIC_LANG} from "@localization/constants";
+interface Props {
+    links: {
+        en :string,ar:string
+    }
+}
+const {links} = Astro.props;
+
+const currentLangIsArabic = Astro.currentLocale === ARABIC_LANG;
+---
+
+{
+    currentLangIsArabic ? (
+        <a class="lang-switch" href={links[ENGLISH_LANG]}>
+            English
+        </a>
+    ) : (
+        <a class="lang-switch fw-bold" href={links[ARABIC_LANG]}>
+            العربية
+        </a>
+    )
+}
+<style>
+    .lang-switch {
+        padding: 0 8px;
+        font-size: 16px;
+        color: var(--body-text-color);
+
+        @media (max-width: 800px) {
+            padding: 10px 30px;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 400px) {
+            padding: 10px;
+        }
+    }
+    .ar-typography {
+        .lang-switch {
+            @media (max-width: 440px) {
+                padding: 10px;
+            }
+        }
+    }
+</style>

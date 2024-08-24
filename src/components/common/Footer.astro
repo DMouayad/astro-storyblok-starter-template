@@ -1,0 +1,95 @@
+---
+import type { ConfigStoryblok, SocialStoryblok } from "component-types-sb";
+import { DEFAULT_LANG } from "@/i18n/constants";
+
+import { storyblokEditable, useStoryblokApi } from "@storyblok/astro";
+import { i18n, localeSiteName } from "@/i18n/utils";
+import Link from "./Link.astro";
+import isPreview from "@/utils/isPreview";
+const language = Astro.currentLocale || DEFAULT_LANG;
+const storyblokApi = useStoryblokApi();
+
+  const { data } = await storyblokApi.get("cdn/stories/config", {
+  language,
+  resolve_links: 'story',
+  resolve_relations: 'Config.social_links',
+  version: isPreview() ? 'draft' : 'published'
+});
+function isArabicLocale() {
+    return Astro.currentLocale === "ar";
+}
+const blok :ConfigStoryblok = data?.story?.content;
+const t =i18n(Astro.currentLocale)
+const thisYear = new Date().getFullYear();
+
+var social_links: SocialStoryblok[] = [];
+if(blok.social_links?.every(el => el instanceof Object)){
+  social_links = blok.social_links.map(el => el.content)
+}
+---
+<footer  class:list={["footer", {"ar-footer": isArabicLocale()}]} {...storyblokEditable(blok)}>
+    <div class="container  bg-overlay">
+        <div class="row justify-content-center">
+            <div class="col-11 col-md-10">
+                <div class="footer-main">
+
+                    <div class="main flex-row d-flex align-items-start   w-100 flex-wrap justify-content-between ">
+
+                        <div class=" footer-company-about my-3 my-lg-0 ">
+                            <div class="d-flex flex-row footer-logo">
+
+                                <div class="h6 footer-logo-text">
+                                    COMPANY NAME
+                                </div>
+
+                            </div>
+                            {blok.company_about && blok.company_about}
+                        </div>
+                        {blok.contacts && blok.contacts.map(contactBlok =>
+                        <div class="contact-col my-3 my-lg-0">
+                                <div class="h6 fw-semibold contact-text-">{contactBlok.title}</div>
+
+                                <ul class="list-round">
+                                <li>
+                                            <span>
+                                        <img src={contactBlok.office.story.content.address_icon.filename} alt="Address Icon"
+                                        width="26" height="26" loading="lazy"
+                                        /> </span>
+                                        
+                                    {contactBlok.office.story.content.address}
+                                </li>
+                                <li style="direction: ltr">
+                                            <span class="phone-icon"> 
+                                        <img src={contactBlok.office.story.content.phone_icon.filename} alt="Phone Icon"
+                                        width="26" height="26" loading="lazy"
+                                        />
+                                            </span>
+                                            {contactBlok.office.story.content.phone_number}
+                                </li>
+                            </ul>
+
+                        </div>
+                             )
+                    }
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    {(blok.show_social_links === true && blok.social_links) &&
+                    
+                    <ul class="social-links m-0">
+                        {social_links.map(item => 
+                        <li class="social-icon">
+                            <Link openInNewTab={true} isExternal={true} href={item.link.url} >
+                                <img width="24px" height="24px" src={item.icon.filename} alt={item.name}  loading="lazy"/>
+                            </Link>
+                        </li>
+                            )}
+                    </ul>
+                    }
+                    <div class="copyright">
+                        <span>Copyright &copy; {thisYear} {localeSiteName(Astro.currentLocale)}</span>
+                    </div>
+                </div>
+        </div>
+    </div>
+</footer>

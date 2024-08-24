@@ -1,0 +1,92 @@
+---
+import { OG, SITE } from "@data/constants";
+interface Props {
+  description?: string;
+  alternateLanguageLinks:Object
+}
+// Default properties for the Meta component.
+const { description = SITE.description, alternateLanguageLinks } = Astro.props;
+
+// Define the metadata for your website and individual pages
+const pageURL = `${Astro.site}`; // Set the website URL in astro.config.mjs
+const author = SITE.author;
+const canonical = Astro.url.href;
+const ogTitle = OG.title;
+const ogDescription = OG.description;
+// const socialImageRes = await getImage({
+//   src: OG.image,
+//   width: 1200,
+//   height: 600,
+// });
+// const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
+function absURL(path:string){
+    return new URL(path, Astro.url.origin).toString()
+}
+---
+
+<meta charset="utf-8" />
+<meta content={description} name="description" />
+<meta name="web_author" content={author} />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"
+/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<link rel="canonical" href={canonical} />
+ {Object.entries(alternateLanguageLinks).map(entry=> 
+  <link rel="alternate" hreflang={entry[0]} href={absURL(entry[1])} />
+ )}
+<meta property="generator" content={Astro.generator} />
+
+<!-- Facebook Meta Tags -->
+<meta property="og:locale" content={Astro.currentLocale} />
+<meta property="og:url" content={pageURL} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={ogTitle} />
+<meta property="og:site_name" content={SITE.title} />
+<meta property="og:description" content={ogDescription} />
+
+<!-- <meta property="og:image" content={socialImage} /> -->
+<meta content="1200" property="og:image:width" />
+<meta content="600" property="og:image:height" />
+<meta content="image/png" property="og:image:type" />
+
+<!-- Twitter Meta Tags -->
+<!-- <meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain" content={pageURL} />
+<meta property="twitter:url" content={pageURL} />
+<meta name="twitter:title" content={ogTitle} />
+<meta name="twitter:description" content={ogDescription} /> -->
+<!-- <meta name="twitter:image" content={socialImage} /> -->
+
+<!-- Links to the webmanifest and sitemap -->
+<!-- https://docs.astro.build/en/guides/integrations-guide/sitemap/ -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Links for favicons -->
+<meta name="mobile-web-app-capable" content="yes" />
+<link href="/favicon/favicon.ico" rel="icon" sizes="any" type="image/x-icon" />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/favicon/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/favicon/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/favicon/favicon-16x16.png"
+/>
+<link rel="manifest" href="/favicon/site.webmanifest" />
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<!-- Set theme  -->
+<meta name="msapplication-TileColor" content="#2b5797" />
+<meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />

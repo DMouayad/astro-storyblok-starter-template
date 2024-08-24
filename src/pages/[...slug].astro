@@ -1,0 +1,46 @@
+---
+import Layout from "@/layouts/BaseLayout.astro";
+import { useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import parseUrl from "@utils/parseURL";
+import isPreview from "@utils/isPreview";
+import generateStaticPaths from "@utils/generateStaticPaths";
+import { HOME_PAGE_STORYBLOK_RELATIONS } from "@/data/constants";
+
+export async function getStaticPaths() {
+  return await generateStaticPaths();
+}
+const params = Astro.params;
+let props = isPreview() ? parseUrl(params?.slug) : Astro.props;
+const { slug, language, langSwitch } = props;
+
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get(
+  `cdn/stories/${slug === undefined ? "home" : slug}`,
+  {
+    version: isPreview() ? "draft" : "published",
+    resolve_links: "url",
+    resolve_relations:
+      slug === undefined
+        ? HOME_PAGE_STORYBLOK_RELATIONS
+        : ["offices_section.offices", "news_section.news_items"],
+    language,
+  },
+);
+const story = data.story;
+var title = "";
+try {
+  title = story.content.name ?? story.content.title ?? story.name;
+} catch (error) {
+  console.log("__ERROR: Generating page title__" + error);
+}
+---
+
+<Layout title={title} langSwitch={langSwitch}>
+  <StoryblokComponent
+    uuid={story.uuid}
+    language={language}
+    blok={story.content}
+  />
+</Layout>

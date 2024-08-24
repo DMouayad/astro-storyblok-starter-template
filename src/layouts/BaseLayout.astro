@@ -1,0 +1,45 @@
+---
+import Meta from "@components/common/Meta.astro";
+import { ARABIC_FONT_LINK, ENGLISH_FONT_LINK } from "@data/constants";
+import { localeSiteName } from "@/i18n/utils";
+
+interface Props {
+	title: string;
+	description?: string;
+	langSwitch: Object;
+}
+
+const { title, description, langSwitch} = Astro.props;
+const current_locale = Astro.currentLocale || "en";
+const isEnglish = current_locale === "en";
+const text_dir = isEnglish ? "ltr" : "rtl";
+const typography_class = isEnglish ? "en-typography" : "ar-typography";
+const font = isEnglish ? ENGLISH_FONT_LINK : ARABIC_FONT_LINK;
+const pageTitle: string = `${title} | ${localeSiteName(Astro.currentLocale)}`;
+---
+
+<!doctype html>
+<html lang={current_locale} dir={text_dir} class={typography_class}>
+	<head>
+		<title>{pageTitle}</title>
+		<Meta description={description} alternateLanguageLinks={langSwitch}/>
+
+		<link
+			id="animateCSS-link"
+			rel="preload"
+			as="style"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+			integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="
+			crossorigin="anonymous"
+		/>
+		
+		<!-- END OF STYLES -->
+	</head>
+	<body id="top" class="body-inner">
+	
+		<!-- <Navigation langSwitch={langSwitch} /> -->
+		<slot />
+		<!-- <Footer /> -->
+		
+	</body>
+</html>

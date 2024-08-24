@@ -1,0 +1,63 @@
+---
+import { i18n, relLangURL } from "@/i18n/utils";
+import { Image } from "astro:assets";
+import logo from "@images/logo.png";    
+const t = i18n(Astro.currentLocale);
+---
+
+<a href={relLangURL("", Astro.currentLocale)}>
+    <div class="d-flex flex-row align-items-center">
+        <Image
+            class="nav-logo-img"
+            src={logo}
+            width="81"
+            alt="Company logo"
+            loading="lazy"
+        />
+        <div class="nav-logo-text">
+            <span class="">COMPANY NAME</span>
+            <br />
+            <span class="logo-border-green">{t("saudi")} </span>
+            <span class="logo-border-black">{t("GE")}</span><span
+                class="logo-border-red">{t("RM")}</span
+            ><span class="logo-border-yellow">{t("AN")}</span>
+        </div>
+    </div>
+</a>
+
+<style lang="scss">
+    .nav-logo-img {
+        aspect-ratio: 9/10;
+        width: 54px;
+        height: 60px;
+        transition: all .3s ease;
+    }
+
+    .logo-border-green {
+        border-bottom: 3px solid var(--dark-green-color);
+    }
+
+    .logo-border-yellow {
+        border-bottom: 3px solid var(--orange-yellowish);
+    }
+
+    .logo-border-red {
+        border-bottom: 3px solid var(--red-primary);
+    }
+
+    .logo-border-black {
+        border-bottom: 3px solid #110f0f;
+    }
+    
+    .nav-logo-text {
+      transition: all 0.3s ease;
+
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--body-text-color);
+        padding-bottom: 3px;
+        line-height: 24px;
+        letter-spacing: 0px;
+    }
+   
+</style>

@@ -1,0 +1,27 @@
+---
+import PageBanner from "@/components/common/PageBanner.astro";
+import PageTitle from "@/components/common/PageTitle.astro";
+import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import type { PageStoryblok } from "component-types-sb";
+interface Props {
+    blok: PageStoryblok;
+    language: any;
+}
+const { blok, language } = Astro.props;
+---
+
+<main {...storyblokEditable(blok)}>
+    {
+        blok.banner_image && blok.banner_image.filename ? (
+            <PageBanner title={blok.title} image={blok.banner_image} />
+        ) : (
+            blok.has_plain_background && <PageTitle title={blok.title} />
+        )
+    }
+    {
+        blok.body?.map((blok) => {
+            return <StoryblokComponent language={language} blok={blok} />;
+        })
+    }
+</main>

@@ -1,0 +1,152 @@
+---
+import LanguageSwitch from "./LanguageSwitch.astro";
+
+import { storyblokEditable, useStoryblokApi } from "@storyblok/astro";
+import type { ConfigStoryblok, HeaderNavLinkStoryblok } from "component-types-sb";
+import { DEFAULT_LANG } from "@/i18n/constants";
+import isPreview from "@/utils/isPreview";
+
+const language = Astro.currentLocale || DEFAULT_LANG;
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get("cdn/stories/config", {
+  language,
+  version: isPreview() ? 'draft' : 'published'
+});
+const blok :ConfigStoryblok = data?.story?.content;
+const headerMenu = blok?.header_nav_menu;
+
+function linkIsActive(url: string) {
+  var linkURL;
+
+  if(url.startsWith("/", 0)){
+    linkURL = url;
+  } else {
+    linkURL= url.padStart(url.length+1 , "/");
+  }
+
+  return linkURL === Astro.url.pathname;
+}
+
+const isArabic = Astro.currentLocale === "ar";
+const navigationLocaleClass =
+  isArabic ? "navigation-ar" : "navigation-en";
+
+function absURL(path:string){
+  if(path === "/" && isArabic){
+    path = "ar/"
+  }
+    return new URL(path, Astro.url.origin).toString()
+}
+const {langSwitch} = Astro.props;
+---
+
+<header {...storyblokEditable(blok)}>
+  <nav 
+    id="navigation"
+    class=`navigation transl py-md-2 navbar fixed-top navbar-expand-lg ${navigationLocaleClass}`
+  >
+    <div class="container-fluid px-1">
+      <div class="flex-grow-1" id="nav-logo">
+        <!-- <Logo /> -->
+      </div>
+      <div class="d-block d-lg-none">
+        <LanguageSwitch links={langSwitch} />
+      </div>
+      <button
+        id="navMenuToggle"
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+            ></path>
+          </svg>
+        </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div id="navbar-nav" class="navbar-nav">
+          {
+           headerMenu&& headerMenu.map((menu: HeaderNavLinkStoryblok) =>
+              menu.children && menu.children.length > 0 ? (
+                <div
+                  id="nav-dropdown"
+                  class="nav-item nav-dropdown dropdown-closed "
+                >
+                  <button
+                    id="nav-dropdown-btn"
+                    class="nav-link dropdown-toggle"
+                    aria-expanded="false"
+                  >
+                    {menu.title}
+                  </button>
+                  <ul>
+                    {menu.children.map(
+                      (subMenu: HeaderNavLinkStoryblok) =>
+                        subMenu.link && (
+                          <li
+                          class:list={[
+                            {
+                              active: linkIsActive(
+                                subMenu.link.cached_url ?? subMenu.link.url,
+                              ),
+                            },
+                          ]}
+                          >
+                            <a
+                              class="dropdown-item"
+                              href={absURL(subMenu.link.cached_url ?? subMenu.link.url)}
+                            >
+                              {subMenu.title}
+                            </a>
+                          </li>
+                        ),
+                    )}
+                  </ul>
+                </div>
+              ) : (
+                <div
+                  class:list={[
+                    "nav-item",
+                    "px-0",
+                    {
+                      active: linkIsActive(
+                        menu.link.cached_url ?? menu.link.url,
+                      ),
+                    },
+                  ]}
+                >
+                  <a
+                    class="nav-link"
+                    href={ absURL(menu.link.cached_url ?? menu.link.url)}
+                  >
+                    {menu.title}
+                  </a>
+                </div>
+              ),
+            )
+          }
+        </div>
+        <div class="px-sm-3 d-none d-lg-block">
+          <LanguageSwitch links={langSwitch} />
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

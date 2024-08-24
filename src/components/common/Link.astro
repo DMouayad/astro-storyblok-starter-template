@@ -1,0 +1,19 @@
+---
+interface Props {
+  href: string;
+  rel?: string;
+  isExternal?: boolean;
+  class?: string;
+  openInNewTab?: boolean
+}
+
+const { href, openInNewTab=false, class: classList, isExternal, rel = '' } = Astro.props;
+---
+
+<a
+  href={href}
+  target={openInNewTab ? '_blank' : '_self'}
+  class:list={['hover:text-blue-500', classList]}
+  rel={`${rel}${isExternal ? ' nofollow noopener noreferrer external' : ''}`}
+  ><slot /></a
+>
