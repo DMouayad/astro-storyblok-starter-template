@@ -1,9 +1,11 @@
 import { defineConfig } from 'astro/config'
 import storyblok from '@storyblok/astro'
-import { loadEnv } from 'vite'
 import tailwind from '@astrojs/tailwind'
-import basicSsl from '@vitejs/plugin-basic-ssl'
 import mkcert from 'vite-plugin-mkcert';
+import robotsConfig from './robots-txt.config';
+import robotsTxt from "astro-robots-txt"
+import sitemap from "@astrojs/sitemap";
+import { loadEnv } from 'vite'
 
 const env = loadEnv('', process.cwd(), 'STORYBLOK')
 
@@ -21,6 +23,7 @@ export default defineConfig({
       },
     }),
     tailwind(),
+    sitemap(), robotsTxt(robotsConfig)
   ],
   vite: {
     plugins: [mkcert()],
@@ -32,4 +35,5 @@ export default defineConfig({
     defaultLocale: "en",
     locales: ["ar", "en"]
   },
+
 })
